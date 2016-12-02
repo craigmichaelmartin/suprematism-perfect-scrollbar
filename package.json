@@ -6,14 +6,12 @@
   "main": "out-tsc/index.js",
   "typings": "out-tsc/index.d.ts",
   "scripts": {
-    "build": "npm run build:tsc && npm run build:css && npm run build:copyAssets",
-    "build:copyAssets": "cp -R src/*.css ./out-tsc && cp -R src/*html ./out-tsc",
+    "build": "npm run build:tsc",
     "build:tsc": "tsc -p src",
-    "build:css": "node-sass src -o src",
     "deploy": "npm run build && ng github-pages:deploy",
-    "clean": "rm -rf out-tsc && find src -name '*.css' -delete",
+    "clean": "rm -rf out-tsc",
     "e2e": "protractor",
-    "example": "npm run watch & ng serve",
+    "example": "ng serve",
     "lint": "npm run lint:src && npm run lint:example",
     "lint:src": "tslint \"src/**/*.ts\"",
     "lint:example": "tslint \"example/**/*.ts\"",
@@ -21,14 +19,12 @@
     "pree2e": "webdriver-manager update",
     "prepublish": "npm run build",
     "postpublish": "npm run clean",
-    "test": "ng test",
-    "watch": "npm run watch:css",
-    "watch:css": "node-sass -w src -o src"
+    "test": "ng test"
   },
   "private": true,
   "peerDependencies": {
     "@angular/core": "^2.0.0",
-    "ionicons": "^3.0.0"
+    "perfect-scrollbar": "^0.6.14"
   },
   "devDependencies": {
     "@angular/common": "2.0.0",
@@ -57,6 +53,7 @@
     "zone.js": "^0.6.23"
   },
   "dependencies": {
+    "perfect-scrollbar": "^0.6.14",
     "suprematism-scss": "github:cinbcuniversal/suprematism-scss#feature/colors"
   }
 }
