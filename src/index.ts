@@ -1,21 +1,18 @@
 import { CommonModule } from '@angular/common';
-import { PerfectScrollbarComponent } from './perfect-scrollbar.component';
+import { PerfectScrollbarDirective } from './perfect-scrollbar.directive';
 import { NgModule } from '@angular/core';
 
-export * from './perfect-scrollbar.component';
+export * from './perfect-scrollbar.directive';
 
 @NgModule({
     imports: [
         CommonModule,
     ],
     declarations: [
-        PerfectScrollbarComponent,
+        PerfectScrollbarDirective,
     ],
     exports: [
-        PerfectScrollbarComponent,
-    ],
-    entryComponents: [
-        PerfectScrollbarComponent,
+        PerfectScrollbarDirective,
     ]
 })
 export class PerfectScrollbarModule {

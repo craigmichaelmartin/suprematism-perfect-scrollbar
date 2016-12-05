@@ -14,7 +14,9 @@
       "tsconfig": "tsconfig.json",
       "prefix": "supre",
       "mobile": false,
-      "styles": [],
+      "styles": [
+        "../node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.css"
+      ],
       "scripts": [],
       "environments": {
         "source": "environments/environment.ts",

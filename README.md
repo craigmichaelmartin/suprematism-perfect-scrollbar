@@ -1,6 +1,6 @@
 # Suprematism Perfect Scrollbar
 
-An Angular 2 perfect scrollbar component.
+An Angular 2 directive which wraps [perfect-scrollbar](https://github.com/noraesae/perfect-scrollbar)
 
 
 #### Installation
@@ -19,25 +19,20 @@ we must manually run the publish prehook and save the files.
 - Run the example locally with `npm run example`
 
 
-## Components
-- [`supre-perfect-scrollbar`](#supre-perfect-scrollbar)
+## Directives
+- [`suprePerfectScrollbar`](#suprePerfectScrollbar)
 
-#### <a id="supre-perfect-scrollbar"></a> `supre-perfect-scrollbar`
-A component for a perfect scrollbar.
-
-##### Directives
-- Any Directives?
+#### <a id="suprePerfectScrollbar"></a> `suprePerfectScrollbar: undefined|ScrollbarConfigurationInterface`
+- A directive specifying the element to be passed to perfect-scrollbars initialize.
+- The directive may be passed [configuration options](https://github.com/noraesae/perfect-scrollbar#optional-parameters).
 
 ##### Events
-- Any Events
-
-
-## States
-- The perfect scrollbar component has these states:
+- The directive dispatches [custom events](https://github.com/noraesae/perfect-scrollbar#events).
 
 
 ## Example
 ```html
-<supre-perfect-scrollbar>
-</supre-perfect-scrollbar>
+<div class="container" [suprePerfectScrollbar]="{suppressScrollX: true}" (ps-scroll-y)="onYScroll($event)">
+  <div class="content"></div>
+</div>
 ```
