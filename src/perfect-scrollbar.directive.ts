@@ -36,7 +36,9 @@ export class PerfectScrollbarDirective implements OnInit, OnDestroy {
 
   ngOnInit() {
     const config = this.suprePerfectScrollbar || {};
-    initialize(this.elementRef.nativeElement, config);
+    if (config !== 'none') {
+      initialize(this.elementRef.nativeElement, config);
+    }
   }
 
   ngOnDestroy() {
