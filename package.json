@@ -54,6 +54,6 @@
   },
   "dependencies": {
     "perfect-scrollbar": "^0.6.14",
-    "suprematism-scss": "github:cinbcuniversal/suprematism-scss#feature/colors"
+    "suprematism-scss": "cinbcuniversal/suprematism-scss"
   }
 }
