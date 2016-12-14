@@ -17,9 +17,11 @@ var PerfectScrollbarDirective = (function () {
         this.elementRef = elementRef;
     }
     // ------ Lifecyle Hooks ----------------------------------------------------
-    PerfectScrollbarDirective.prototype.ngOnInit = function () {
+    PerfectScrollbarDirective.prototype.ngAfterViewInit = function () {
         var config = this.suprePerfectScrollbar || {};
-        perfect_scrollbar_1.initialize(this.elementRef.nativeElement, config);
+        if (config !== 'none') {
+            perfect_scrollbar_1.initialize(this.elementRef.nativeElement, config);
+        }
     };
     PerfectScrollbarDirective.prototype.ngOnDestroy = function () {
         perfect_scrollbar_1.destroy(this.elementRef.nativeElement);
