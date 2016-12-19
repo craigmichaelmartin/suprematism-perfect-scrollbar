@@ -1,4 +1,4 @@
-import { ElementRef, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, ElementRef, OnDestroy } from '@angular/core';
 export interface ScrollbarConfigurationInterface {
     handlers?: Array<string>;
     wheelSpeed?: number;
@@ -13,10 +13,10 @@ export interface ScrollbarConfigurationInterface {
     scrollYMarginOffset?: number;
     stopPropagationOnClick?: boolean;
 }
-export declare class PerfectScrollbarDirective implements OnInit, OnDestroy {
+export declare class PerfectScrollbarDirective implements AfterViewInit, OnDestroy {
     protected elementRef: ElementRef;
     suprePerfectScrollbar: ScrollbarConfigurationInterface;
     constructor(elementRef: ElementRef);
-    ngOnInit(): void;
+    ngAfterViewInit(): void;
     ngOnDestroy(): void;
 }

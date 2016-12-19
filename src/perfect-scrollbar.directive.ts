@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Directive, ElementRef, Input, OnDestroy } from '@angular/core';
 import { initialize, destroy } from 'perfect-scrollbar';
 
 export interface ScrollbarConfigurationInterface {
@@ -20,7 +20,7 @@ export interface ScrollbarConfigurationInterface {
   selector: '[suprePerfectScrollbar]',
   exportAs: 'suprePerfectScrollbar'
 })
-export class PerfectScrollbarDirective implements OnInit, OnDestroy {
+export class PerfectScrollbarDirective implements AfterViewInit, OnDestroy {
 
   // ------ Public Properties -------------------------------------------------
 
@@ -34,9 +34,11 @@ export class PerfectScrollbarDirective implements OnInit, OnDestroy {
 
   // ------ Lifecyle Hooks ----------------------------------------------------
 
-  ngOnInit() {
+  ngAfterViewInit() {
     const config = this.suprePerfectScrollbar || {};
-    initialize(this.elementRef.nativeElement, config);
+    if (config !== 'none') {
+      initialize(this.elementRef.nativeElement, config);
+    }
   }
 
   ngOnDestroy() {
